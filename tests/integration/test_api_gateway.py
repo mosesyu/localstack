@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import re
 import json
 from requests.models import Response
@@ -157,7 +159,7 @@ def test_api_gateway_http_integration():
     result = requests.get(url)
     assert result.status_code == 200
     assert to_str(result.content) == '{}'
-    data = {'data': 123}
+    data = {'data': 'abc£123'}
     result = requests.post(url, data=json.dumps(data))
     assert result.status_code == 200
     assert json.loads(to_str(result.content)) == data

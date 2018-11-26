@@ -60,5 +60,5 @@ ADD bin/supervisord.conf /etc/supervisord.conf
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
 
 # run tests (to verify the build before pushing the image)
-ADD tests/ tests/
+#ADD tests/ tests/
 RUN make test
